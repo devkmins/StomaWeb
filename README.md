@@ -21,6 +21,7 @@
       - [홈 페이지](#홈-페이지)
       - [관심 종목 페이지](#관심-종목-페이지)
       - [시장 페이지](#시장-페이지)
+      - [투자 · 경제 공부 페이지](#투자--경제-공부-페이지)
     - [함수](#함수)
     - [타입 설계](#타입-설계)
     - [컴포넌트 설계](#컴포넌트-설계)
@@ -343,6 +344,15 @@ StomaWeb은 주식, 암호화폐, 뉴스 등의 유용한 정보들을 편리하
 | /markets/funds-etfs       | 펀드 및 ETF |
 | /markets/cryptocurrencies | 암호화폐    |
 | /markets/ipo-calendar     | IPO 일정    |
+
+#### 투자 · 경제 공부 페이지
+
+| 경로                             | 설명                    |
+| -------------------------------- | ----------------------- |
+| /finance-education/lectures      | 강의                    |
+| /finance-education/books         | 도서                    |
+| /finance-education/services      | 금융 관련 서비스        |
+| /finance-education/banks-reports | 전 세계 은행들의 보고서 |
 
 ### 함수
 
