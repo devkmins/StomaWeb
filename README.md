@@ -20,6 +20,7 @@
     - [Routes 설정](#routes-설정)
       - [홈 페이지](#홈-페이지)
       - [관심 종목 페이지](#관심-종목-페이지)
+      - [시장 페이지](#시장-페이지)
     - [함수](#함수)
     - [타입 설계](#타입-설계)
     - [컴포넌트 설계](#컴포넌트-설계)
@@ -329,6 +330,19 @@ StomaWeb은 주식, 암호화폐, 뉴스 등의 유용한 정보들을 편리하
 | /watchlist/:keyword               | 관심 종목의 특정 종목 |
 | /watchlist/:categoryname          | 카테고리별 관심 종목  |
 | /watchlist/:categoryname/:keyword | 카테고리의 특정 종목  |
+
+#### 시장 페이지
+
+| 경로                      | 설명        |
+| ------------------------- | ----------- |
+| /markets/news             | 뉴스        |
+| /markets/stocks           | 주식        |
+| /markets/indices          | 지수        |
+| /markets/currencies       | 외환        |
+| /markets/futures          | 선물        |
+| /markets/funds-etfs       | 펀드 및 ETF |
+| /markets/cryptocurrencies | 암호화폐    |
+| /markets/ipo-calendar     | IPO 일정    |
 
 ### 함수
 
