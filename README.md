@@ -24,6 +24,7 @@
       - [투자 · 경제 공부 페이지](#투자--경제-공부-페이지)
       - [더 보기 페이지](#더-보기-페이지)
       - [검색 페이지](#검색-페이지)
+      - [주식 프로필 페이지](#주식-프로필-페이지)
     - [함수](#함수)
     - [타입 설계](#타입-설계)
     - [컴포넌트 설계](#컴포넌트-설계)
@@ -373,6 +374,21 @@ StomaWeb은 주식, 암호화폐, 뉴스 등의 유용한 정보들을 편리하
 | /search/:keyword   | 검색          |
 | /search/:company/… | 주식 검색     |
 | /search/:crypto/…  | 암호화폐 검색 |
+
+#### 주식 프로필 페이지
+
+| 경로                         | 설명        |
+| ---------------------------- | ----------- |
+| /:company/profile            | 기업 개요   |
+| /:company/statistics         | 통계        |
+| /:company/financials         | 재무 정보   |
+| /:company/cash-flow          | 현금 흐름   |
+| /:company/activities         | 거래 활동   |
+| /:company/evaluation         | 평가        |
+| /:company/technical-analysis | 기술적 분석 |
+| /:company/sec                | SEC         |
+| /:company/news               | 뉴스        |
+| /:company/events             | 일정        |
 
 ### 함수
 
