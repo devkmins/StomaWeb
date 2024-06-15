@@ -710,6 +710,12 @@ StomaWeb은 주식, 암호화폐, 뉴스 등의 유용한 정보들을 편리하
 
 ### IndexedDB 설계
 
+| IndexedDB                    | 설명                                                                                             |
+| ---------------------------- | ------------------------------------------------------------------------------------------------ |
+| StomaWeb-Categories Database | 첫 카테고리를 생성할 때 StomaWeb-Categories라는 데이터베이스를 Open                              |
+| 카테고리 목록 Object Store   | 카테고리를 추가할 때마다 카테고리 목록 Object Store에 카테고리명을 추가                          |
+| 각각의 카테고리 Object Store | 카테고리를 추가할 때마다 StomaWeb-Categories Database 내에서 각각의 카테고리 Object Store를 생성 |
+
 ### 컴포넌트 설계
 
 ### SEO 설계
