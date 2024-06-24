@@ -37,9 +37,7 @@ export default function Header() {
         </Link>
         <div className="ml-1">
           <Link href={"https://buymeacoffee.com/stomaweb"}>
-            <span className="text-[13px] hover:text-gray-500">
-              더 나은 서비스를 개발할 수 있도록 도와주세요!
-            </span>
+            <span className="text-[13px] hover:text-gray-500">응원하기!</span>
           </Link>
         </div>
       </div>
