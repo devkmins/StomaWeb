@@ -524,7 +524,7 @@ StomaWeb은 주식, 암호화폐, 뉴스 등의 유용한 정보들을 편리하
 | /more/support         | 문의하기             |
 | /more/terms-of-use    | 이용약관             |
 | /more/privacy-policy  | 개인정보 정책        |
-| /more/languare-change | 언어 변경            |
+| /more/language-change | 언어 변경            |
 
 #### 검색 페이지
 
