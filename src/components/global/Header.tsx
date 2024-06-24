@@ -32,13 +32,19 @@ export default function Header() {
         </div>
       </div>
       <div className="mt-5 flex justify-center items-center">
-        <Link href={"https://buymeacoffee.com/stomaweb"}>
+        <a
+          href={"https://buymeacoffee.com/stomaweb"}
+          target="_blank"
+          rel="noopener noreferrer">
           <IMoney />
-        </Link>
+        </a>
         <div className="ml-1">
-          <Link href={"https://buymeacoffee.com/stomaweb"}>
+          <a
+            href={"https://buymeacoffee.com/stomaweb"}
+            target="_blank"
+            rel="noopener noreferrer">
             <span className="text-[13px] hover:text-gray-500">응원하기!</span>
-          </Link>
+          </a>
         </div>
       </div>
     </header>
