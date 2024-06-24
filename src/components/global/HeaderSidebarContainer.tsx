@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "@/components/global/Header/Header";
-import SideBar from "@/components/global/SideBar";
+import SideBar from "@/components/global/SideBar/SideBar";
 
 export default function HeaderSidebarContainer() {
   return (
