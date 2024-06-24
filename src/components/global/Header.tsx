@@ -4,22 +4,25 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { ubuntu } from "@/assets/fonts/ubuntu";
+import { notoSansKR } from "@/assets/fonts/notoSansKR";
+
 export default function Header() {
   return (
-    <header className="mt-5">
-      <div className="mb-5 flex justify-center">
+    <header>
+      <div className="my-5 flex justify-center">
         <Link href="/">
           <Image width={50} height={50} src="/logo/logoCircle.png" alt="Logo" />
         </Link>
         <Link href="/" className="ml-2.5 flex items-center">
-          <span className="text-xl font-bold">StomaWeb</span>
+          <span className={`${ubuntu.className} text-2xl`}>StomaWeb</span>
         </Link>
       </div>
       <div className="flex justify-center">
         <div className="w-11/12 border rounded-md flex justify-between items-center">
           <form className="w-11/12">
             <input
-              className="p-2 w-full focus:outline-none"
+              className="p-2 w-full"
               name="keyword"
               placeholder="이 웹사이트에서 검색하기"
               type="text"
@@ -43,7 +46,10 @@ export default function Header() {
             href={"https://buymeacoffee.com/stomaweb"}
             target="_blank"
             rel="noopener noreferrer">
-            <span className="text-[13px] hover:text-gray-500">응원하기!</span>
+            <span
+              className={`${notoSansKR.style} font-semibold text-[14px] hover:text-gray-500`}>
+              응원하기!
+            </span>
           </a>
         </div>
       </div>
