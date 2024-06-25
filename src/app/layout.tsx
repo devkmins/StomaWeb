@@ -1,7 +1,7 @@
 import React from "react";
 import "./globals.css";
 
-import HeaderSidebarContainer from "@/components/global/HeaderSidebarContainer";
+import HeaderSidebarContainer from "@/components/global/HeaderSidebarContainer/HeaderSidebarContainer";
 
 import { notoSansKR } from "@/assets/fonts/notoSansKR";
 
