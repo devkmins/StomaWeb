@@ -2,8 +2,6 @@ import React from "react";
 
 const IUnitedStatesSquare = () => (
   <svg
-    width="30"
-    height="30"
     xmlns="http://www.w3.org/2000/svg"
     id="flag-icons-us"
     viewBox="0 0 640 480">

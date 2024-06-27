@@ -2,8 +2,6 @@ import React from "react";
 
 const ISouthKoreaSquare = () => (
   <svg
-    width="30"
-    height="30"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     id="flag-icons-kr"
