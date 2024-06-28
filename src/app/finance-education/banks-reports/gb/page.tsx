@@ -1,26 +1,26 @@
-import IUnitedStatesSquare from "@/assets/icons/flags/square/IUnitedStatesSquare";
+import IUnitedKingdomSquare from "@/assets/icons/flags/square/IUnitedKingdomSquare";
 import BanksReportsMainBox from "@/components/banks-reports/BanksReportsMainBox";
 import Image from "next/image";
 
-export default function UnitedStatesBanksReports() {
+export default function UnitedKingdomBanksReports() {
   return (
     <div className="mt-10 grid grid-cols-4 gap-20 flex items-center">
       <a
-        href={"https://www.federalreserve.gov/"}
+        href={"https://www.bankofengland.co.uk/"}
         target="_blank"
         rel="noopener noreferrer">
-        <BanksReportsMainBox centralBankName="미국 연방 준비 제도">
-          <IUnitedStatesSquare />
+        <BanksReportsMainBox centralBankName="영국 은행">
+          <IUnitedKingdomSquare />
         </BanksReportsMainBox>
       </a>
       <a
-        href={"https://www.imf.org/en/Research"}
+        href={"https://home.barclays/"}
         target="_blank"
         rel="noopener noreferrer">
-        <BanksReportsMainBox centralBankName="IMF">
+        <BanksReportsMainBox centralBankName="바클리즈">
           <Image
-            src="/logo/country/us/imf.png"
-            alt="IMF 로고"
+            src="/logo/country/gb/barclays.jpeg"
+            alt="바클리즈 로고"
             width="160"
             height="120"
             className="object-contain"
@@ -28,26 +28,26 @@ export default function UnitedStatesBanksReports() {
         </BanksReportsMainBox>
       </a>
       <a
-        href={"https://www.jpmorgan.com/global"}
+        href={"https://www.hsbc.com.hk/"}
         target="_blank"
         rel="noopener noreferrer">
-        <BanksReportsMainBox centralBankName="JP 모건">
+        <BanksReportsMainBox centralBankName="홍콩상하이은행">
           <Image
-            src="/logo/country/us/jp-morgan.png"
-            alt="JP 모건 로고"
+            src="/logo/country/gb/hsbc.jpeg"
+            alt="홍콩상하이은행 로고"
             width="160"
             height="120"
           />
         </BanksReportsMainBox>
       </a>
       <a
-        href={"https://www.goldmansachs.com/"}
+        href={"https://www.lloydsbankinggroup.com/"}
         target="_blank"
         rel="noopener noreferrer">
-        <BanksReportsMainBox centralBankName="골드만 삭스">
+        <BanksReportsMainBox centralBankName="로이즈 뱅킹 그룹">
           <Image
-            src="/logo/country/us/goldman-sachs.webp"
-            alt="골드만 삭스 로고"
+            src="/logo/country/gb/lloyds-banking-group.png"
+            alt="로이즈 뱅킹 로고"
             width="160"
             height="120"
           />
