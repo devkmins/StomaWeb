@@ -55,8 +55,6 @@ export default function BanksReportsDropDown() {
     };
   }, []);
 
-  console.log(countryName);
-
   return (
     <div className="relative mt-10 pb-10 border-b-2 ">
       <div className="w-fit" ref={dropdownRef}>
