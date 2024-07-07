@@ -1,1 +1,3 @@
-export default function WatchlistInterestsMenu() {}
+export default function InterestsMenu() {
+  return <div>Interests</div>;
+}
