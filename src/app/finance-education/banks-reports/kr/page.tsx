@@ -19,7 +19,7 @@ export default function SouthKoreaBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="KB경영연구소">
           <Image
-            src="/logo/country/kr/kb.png"
+            src="/logo/country/kr/kb.webp"
             alt="KB경영연구소 로고"
             width="160"
             height="120"
@@ -33,7 +33,7 @@ export default function SouthKoreaBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="우리금융경영연구소">
           <Image
-            src="/logo/country/kr/wfri.jpeg"
+            src="/logo/country/kr/wfri.webp"
             alt="우리금융경영연구소 로고"
             width="160"
             height="120"
@@ -46,7 +46,7 @@ export default function SouthKoreaBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="KDI 경제정보센터">
           <Image
-            src="/logo/country/kr/kdi.jpeg"
+            src="/logo/country/kr/kdi.webp"
             alt="KDI 경제정보센터 로고"
             width="160"
             height="120"

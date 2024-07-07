@@ -19,7 +19,7 @@ export default function CanadaBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="캐나다 왕립은행">
           <Image
-            src="/logo/country/ca/rbc.png"
+            src="/logo/country/ca/rbc.webp"
             alt="캐나다 왕립은행 로고"
             width="160"
             height="120"
@@ -46,7 +46,7 @@ export default function CanadaBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="스코샤 은행">
           <Image
-            src="/logo/country/ca/scotiabank.png"
+            src="/logo/country/ca/scotiabank.webp"
             alt="스코샤 은행 로고"
             width="160"
             height="120"

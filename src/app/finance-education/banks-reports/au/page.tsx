@@ -19,7 +19,7 @@ export default function AustraliaBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="커먼웰스 은행">
           <Image
-            src="/logo/country/au/commonwealth-bank.png"
+            src="/logo/country/au/commonwealth-bank.webp"
             alt="커먼웰스 은행 로고"
             width="160"
             height="120"
@@ -33,7 +33,7 @@ export default function AustraliaBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="웨스트팩">
           <Image
-            src="/logo/country/au/westpac.jpeg"
+            src="/logo/country/au/westpac.webp"
             alt="웨스트팩 로고"
             width="160"
             height="120"
@@ -46,7 +46,7 @@ export default function AustraliaBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="오스트레일리아 뉴질랜드 은행">
           <Image
-            src="/logo/country/au/anz.jpeg"
+            src="/logo/country/au/anz.webp"
             alt="오스트레일리아 뉴질랜드 은행 로고"
             width="160"
             height="120"

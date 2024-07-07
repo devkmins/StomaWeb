@@ -19,7 +19,7 @@ export default function UnitedKingdomBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="바클리즈">
           <Image
-            src="/logo/country/gb/barclays.jpeg"
+            src="/logo/country/gb/barclays.webp"
             alt="바클리즈 로고"
             width="160"
             height="120"
@@ -33,7 +33,7 @@ export default function UnitedKingdomBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="홍콩상하이은행">
           <Image
-            src="/logo/country/gb/hsbc.jpeg"
+            src="/logo/country/gb/hsbc.webp"
             alt="홍콩상하이은행 로고"
             width="160"
             height="120"
@@ -46,7 +46,7 @@ export default function UnitedKingdomBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="로이즈 뱅킹 그룹">
           <Image
-            src="/logo/country/gb/lloyds-banking-group.png"
+            src="/logo/country/gb/lloyds-banking-group.webp"
             alt="로이즈 뱅킹 로고"
             width="160"
             height="120"

@@ -19,7 +19,7 @@ export default function UnitedStatesBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="IMF">
           <Image
-            src="/logo/country/us/imf.png"
+            src="/logo/country/us/imf.webp"
             alt="IMF 로고"
             width="160"
             height="120"
@@ -33,7 +33,7 @@ export default function UnitedStatesBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="JP 모건">
           <Image
-            src="/logo/country/us/jp-morgan.png"
+            src="/logo/country/us/jp-morgan.webp"
             alt="JP 모건 로고"
             width="160"
             height="120"

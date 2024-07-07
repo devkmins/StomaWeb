@@ -19,7 +19,7 @@ export default function SingaporeBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="DBS 은행">
           <Image
-            src="/logo/country/sg/dbs-bank.jpg"
+            src="/logo/country/sg/dbs-bank.webp"
             alt="DBS 은행 로고"
             width="160"
             height="120"
@@ -32,7 +32,7 @@ export default function SingaporeBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="화교은행">
           <Image
-            src="/logo/country/sg/ocbc-bank.png"
+            src="/logo/country/sg/ocbc-bank.webp"
             alt="화교은행 로고"
             width="160"
             height="120"
@@ -45,7 +45,7 @@ export default function SingaporeBanksReports() {
         rel="noopener noreferrer">
         <BanksReportsMainBox centralBankName="스탠다드 차타드 은행">
           <Image
-            src="/logo/country/sg/standard-chartered-bank.png"
+            src="/logo/country/sg/standard-chartered-bank.webp"
             alt="스탠다드 차타드 은행 로고"
             width="160"
             height="120"
