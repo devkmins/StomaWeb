@@ -182,7 +182,7 @@ export default function CategoryMenu() {
       setSelectedCategories([]);
       setHasChanges(false);
     };
-  });
+  }, []);
 
   return (
     <div className="w-1/4 h-full absolute top-0 right-0 border-l-2 bg-white overflow-scroll">
@@ -219,6 +219,7 @@ export default function CategoryMenu() {
         </div>
         <button
           type="submit"
+          aria-label="새로운 카테고리를 추가하는 버튼"
           className="w-11/12 py-2 border rounded-lg text-gray-500 hover:bg-gray-100">
           추가하기
         </button>
@@ -249,11 +250,13 @@ export default function CategoryMenu() {
                   />
                   <button
                     onClick={() => handleEditSave(category)}
+                    aria-label="변경한 카테고리명을 저장하는 버튼"
                     className="ml-2 px-1 bg-blue-500 text-white rounded">
                     저장
                   </button>
                   <button
                     onClick={handleEditCancel}
+                    aria-label="카테고리명 변경을 취소하는 버튼"
                     className="ml-2 px-1 bg-gray-300 rounded">
                     취소
                   </button>
@@ -277,21 +280,25 @@ export default function CategoryMenu() {
               <div className="flex w-full mb-px">
                 <button
                   onClick={() => handleMoveCategory("up")}
+                  aria-label="카테고리의 순서를 위로 이동시키는 버튼"
                   className="w-full py-2 bg-gray-500 text-white text-sm">
                   위로 이동
                 </button>
                 <button
                   onClick={() => handleMoveCategory("down")}
+                  aria-label="카테고리의 순서를 아래로 이동시키는 버튼"
                   className="w-full bg-gray-500 text-white text-sm">
                   아래로 이동
                 </button>
                 <button
                   onClick={handleSaveReorder}
+                  aria-label="변경한 카테고리의 순서를 저장하는 버튼"
                   className="w-full bg-blue-500 text-white text-sm">
                   저장하기
                 </button>
                 <button
                   onClick={handleCancelReorder}
+                  aria-label="카테고리의 순서 변경을 취소하는 버튼"
                   className="w-full bg-red-500 text-white text-sm">
                   취소하기
                 </button>
