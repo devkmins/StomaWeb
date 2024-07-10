@@ -1,9 +1,9 @@
 "use client";
 
+import React, { useRef, useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import IClose from "@/assets/icons/IClose";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useRef, useState, useEffect } from "react";
 import ICheckOutline from "@/assets/icons/ICheckOutline";
 import IPencil from "@/assets/icons/IPencil";
 import ICheckFilled from "@/assets/icons/ICheckFilled";
@@ -23,115 +23,107 @@ export default function CategoryMenu() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editingName, setEditingName] = useState<string>("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [tempCategories, setTempCategories] = useState<Category[]>([]);
-  const [hasChanges, setHasChanges] = useState(false);
+  const [hasChanges, setHasChanges] = useState<boolean>(false);
   const { setCategoryName } = useWatchListCategoryNameStore();
   const { categories, setCategories } = useSetCategories();
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     router.push("/watchlist");
-  };
+  }, [router]);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleSubmit = useCallback(
+    async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      const inputValue = inputRef?.current?.value;
+      if (inputValue) {
+        await addCategory(inputValue);
+        if (inputRef.current) inputRef.current.value = "";
+        const updatedCategories = await getCategories();
+        setCategories(updatedCategories);
+      }
+    },
+    [setCategories]
+  );
 
-    const inputValue = inputRef?.current?.value as string;
-
-    if (inputValue) {
-      await addCategory(inputValue);
-      if (inputRef.current) inputRef.current.value = "";
-
-      const updatedCategories = await getCategories();
-      setCategories(updatedCategories);
-    }
-  };
-
-  const handleEditStart = (category: Category) => {
+  const handleEditStart = useCallback((category: Category) => {
     setEditingId(category.id);
     setEditingName(category.name);
-  };
+  }, []);
 
-  const handleEditSave = async (category: Category) => {
-    if (editingName.trim() !== "") {
-      const updatedCategory = { ...category, name: editingName.trim() };
-      await updateCategory(updatedCategory);
-      setCategories((prevCategories) =>
-        prevCategories.map((c) => (c.id === category.id ? updatedCategory : c))
-      );
-      setEditingId(null);
-      setEditingName("");
-    }
-  };
+  const handleEditSave = useCallback(
+    async (category: Category) => {
+      if (editingName.trim() !== "") {
+        const updatedCategory = { ...category, name: editingName.trim() };
+        await updateCategory(updatedCategory);
+        setCategories((prevCategories) =>
+          prevCategories.map((c) =>
+            c.id === category.id ? updatedCategory : c
+          )
+        );
+        setEditingId(null);
+        setEditingName("");
+      }
+    },
+    [editingName, setCategories]
+  );
 
-  const handleEditCancel = () => {
+  const handleEditCancel = useCallback(() => {
     setEditingId(null);
     setEditingName("");
-  };
+  }, []);
 
-  const handleCheckToggle = (id: string) => {
-    setTempCategories((prevCategories) =>
-      prevCategories.map((category) =>
-        category.id === id
-          ? { ...category, isChecked: !category.isChecked }
-          : category
-      )
-    );
-
+  const handleCheckToggle = useCallback((id: string) => {
     setSelectedCategories((prev) => {
       const newSelected = prev.includes(id)
         ? prev.filter((cId) => cId !== id)
         : [...prev, id];
-
       setHasChanges(newSelected.length > 0);
-
       return newSelected;
     });
-  };
+  }, []);
 
-  const handleMoveCategory = (direction: "up" | "down") => {
-    if (selectedCategories.length !== 1) return;
+  const handleMoveCategory = useCallback(
+    (direction: "up" | "down") => {
+      if (selectedCategories.length !== 1) return;
 
-    const currentIndex = tempCategories.findIndex(
-      (c) => c.id === selectedCategories[0]
-    );
+      const currentIndex = categories.findIndex(
+        (c) => c.id === selectedCategories[0]
+      );
 
-    if (currentIndex === -1) return;
+      if (currentIndex === -1) return;
 
-    let newIndex: number;
+      let newIndex: number;
 
-    if (direction === "up" && currentIndex > 0) {
-      newIndex = currentIndex - 1;
-    } else if (
-      direction === "down" &&
-      currentIndex < tempCategories.length - 1
-    ) {
-      newIndex = currentIndex + 1;
-    } else {
-      return;
-    }
+      if (direction === "up" && currentIndex > 0) {
+        newIndex = currentIndex - 1;
+      } else if (direction === "down" && currentIndex < categories.length - 1) {
+        newIndex = currentIndex + 1;
+      } else {
+        return;
+      }
 
-    const newCategories = [...tempCategories];
-    const [movedCategory] = newCategories.splice(currentIndex, 1);
+      const newCategories = [...categories];
+      const [movedCategory] = newCategories.splice(currentIndex, 1);
 
-    newCategories.splice(newIndex, 0, movedCategory);
-    newCategories.forEach((category, index) => {
-      category.order = index + 1;
-    });
+      newCategories.splice(newIndex, 0, movedCategory);
+      newCategories.forEach((category, index) => {
+        category.order = index + 1;
+      });
 
-    setTempCategories(newCategories);
-    setHasChanges(true);
-  };
+      setCategories(newCategories);
+      setHasChanges(true);
+    },
+    [categories, selectedCategories, setCategories]
+  );
 
-  const handleSaveReorder = async () => {
+  const handleSaveReorder = useCallback(async () => {
     if (hasChanges) {
-      const updatedCategories = tempCategories.map((category, index) => ({
+      const updatedCategories = categories.map((category, index) => ({
         ...category,
-        isChecked: false,
         order: index + 1,
       }));
 
       setCategories(updatedCategories);
-      setTempCategories(updatedCategories);
       setSelectedCategories([]);
       setHasChanges(false);
 
@@ -145,44 +137,33 @@ export default function CategoryMenu() {
 
       await tx.done;
     }
-  };
+  }, [hasChanges, categories, setCategories]);
 
-  const handleCancelReorder = () => {
-    const resetCategories = categories.map((category) => ({
-      ...category,
-      isChecked: false,
-    }));
-    setTempCategories(resetCategories);
+  const handleCancelReorder = useCallback(() => {
     setSelectedCategories([]);
     setHasChanges(false);
-  };
+  }, []);
 
-  const handleDeleteCategories = async () => {
+  const handleDeleteCategories = useCallback(async () => {
     try {
       await deleteCategories(selectedCategories);
-      setTempCategories(
-        tempCategories.filter(
+      setCategories(
+        categories.filter(
           (category) => !selectedCategories.includes(category.id)
         )
       );
       setSelectedCategories([]);
       setHasChanges(false);
       setCategoryName("");
-    } catch (error) {}
-  };
+      router.push("/watchlist");
 
-  useEffect(() => {
-    setTempCategories(
-      categories.map((category) => ({ ...category, isChecked: false }))
-    );
-  }, [categories]);
-
-  useEffect(() => {
-    return () => {
-      setSelectedCategories([]);
-      setHasChanges(false);
-    };
-  }, []);
+      setTimeout(() => {
+        router.push("/watchlist/settings/category");
+      }, 1);
+    } catch (error) {
+      console.error("Failed to delete categories:", error);
+    }
+  }, [selectedCategories, categories, setCategories, setCategoryName, router]);
 
   return (
     <div className="w-1/4 h-full absolute top-0 right-0 border-l-2 bg-white overflow-scroll">
@@ -229,16 +210,20 @@ export default function CategoryMenu() {
           카테고리 목록
         </h2>
         <ul>
-          {tempCategories.map((category) => (
+          {categories.map((category) => (
             <li
               key={category.id}
               className={`py-2 px-2 border-b flex items-center ${
-                category.isChecked ? "bg-gray-100" : ""
+                selectedCategories.includes(category.id) ? "bg-gray-100" : ""
               }`}>
               <div
                 className="w-6 cursor-pointer"
                 onClick={() => handleCheckToggle(category.id)}>
-                {category.isChecked ? <ICheckFilled /> : <ICheckOutline />}
+                {selectedCategories.includes(category.id) ? (
+                  <ICheckFilled />
+                ) : (
+                  <ICheckOutline />
+                )}
               </div>
               {editingId === category.id ? (
                 <>
