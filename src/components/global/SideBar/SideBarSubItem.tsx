@@ -9,12 +9,7 @@ export default function SideBarSubItem({ itemName }: SideBarSubItemProp) {
     { href: "/markets", label: "메인" },
     { href: "/markets/news", label: "뉴스" },
     { href: "/markets/stocks", label: "주식" },
-    { href: "/markets/indices", label: "지수" },
-    { href: "/markets/currencies", label: "외환" },
-    { href: "/markets/futures", label: "선물" },
-    { href: "/markets/funds-etfs", label: "펀드 및 ETF" },
     { href: "/markets/cryptocurrencies", label: "암호화폐" },
-    { href: "/markets/ipo-calendar", label: "IPO 일정" },
   ];
 
   const financeEducationMenuItems = [
