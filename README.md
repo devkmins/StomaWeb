@@ -1,5 +1,7 @@
 # StomaWeb
 
+<img width="100%" alt="홈 페이지" src="https://github.com/user-attachments/assets/9b0604fa-4883-424f-8add-09ad031862d0">
+
 <br />
 
 ## 목차
